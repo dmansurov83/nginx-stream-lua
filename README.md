@@ -12,18 +12,13 @@ This repository contains **Dockerfile** of Nginx Stream
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download: `docker pull tekn0ir/nginx-stream`
-
-(alternatively, you can build an image from Dockerfile: 
-```bash
-$ docker build -t="tekn0ir/nginx-stream" github.com/tekn0ir/nginx-stream
-```
+2. Download: `docker pull dmansurov83/nginx-stream-lua`
 
 ### Usage
 
 Start deamon
 ```bash
-$ docker run -d -p 0.0.0.0:80:80 --name nginx tekn0ir/nginx-stream
+$ docker run -d -p 0.0.0.0:80:80 --name nginx dmansurov83/nginx-stream-lua
 ```
 
 ### Configure
@@ -73,7 +68,7 @@ https://nginx.org/en/docs/stream/ngx_stream_core_module.html
 
 Start deamon with configs
 ```bash
-$ docker run -d -p 80:80 -p 65432:65432 -v `pwd`\http.conf.d:/opt/nginx/http.conf.d  -v `pwd`\stream.conf.d:/opt/nginx/stream.conf.d --name nginx tekn0ir/nginx-stream
+$ docker run -d -p 80:80 -p 65432:65432 -v `pwd`\http.conf.d:/opt/nginx/http.conf.d  -v `pwd`\stream.conf.d:/opt/nginx/stream.conf.d --name nginx dmansurov83/nginx-stream-lua
 ```
 
 ### Zero downtime reloading of changed configs
